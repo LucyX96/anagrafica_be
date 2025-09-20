@@ -13,8 +13,10 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
+        config.addAllowedOriginPattern("*");
         config.addAllowedOrigin("http://localhost:4200");
         config.addAllowedOrigin("http://localhost:8100");
+        config.addAllowedOrigin("http://192.168.1.100:8100");
         config.addAllowedMethod("GET");
         config.addAllowedMethod("POST");
         config.addAllowedMethod("PUT");
